@@ -34,7 +34,7 @@ def main():
 
 		time.sleep(.0001)
 
-	print("Final Q-table" agent.q-table)
+	print("Final Q-table", agent.q-table)
 
 if __name__ == "__main__":
     main()
