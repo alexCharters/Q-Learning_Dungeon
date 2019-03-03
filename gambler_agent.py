@@ -36,5 +36,5 @@ class Gambler:
 		new_value = old_value + self.learning_rate * (reward + self.discount*future_reward - old_value)
 		self.q_table[action][old_state] = new_value
 
-		if self.exploartion_rate > 0:
+		if self.exploration_rate > 0:
 			self.exploration_rate -= self.exploration_delta
