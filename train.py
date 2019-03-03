@@ -3,6 +3,7 @@ import json
 import argparse
 import time
 from drunkard_agent import Drunkard
+from accountant_agent import Accountant
 from dungeon import DungeonSimulator
 
 def main():
@@ -16,6 +17,8 @@ def main():
 
 	if FLAGS.agent == 'DRUNKARD':
 		agent = Drunkard()
+	if FLAGS.agent == 'ACCOUNTANT':
+		agent = Accountant()
 
 	dungeon = DungeonSimulator()
 	dungeon.reset()
@@ -34,8 +37,7 @@ def main():
 
 		time.sleep(.0001)
 
-	print("Final Q-table", agent.q-table)
+	print("Final Q-table", agent.q_table)
 
 if __name__ == "__main__":
     main()
-	
