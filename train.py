@@ -21,7 +21,7 @@ def main():
 	if FLAGS.agent == 'ACCOUNTANT':
 		agent = Accountant()
 	if FLAGS.agent == 'GAMBLER':
-		agent = Gambler()
+		agent = Gambler(FLAGS.learning_rate, FLAGS.discount, 1.0, FLAGS.iterations)
 
 	dungeon = DungeonSimulator()
 	dungeon.reset()
