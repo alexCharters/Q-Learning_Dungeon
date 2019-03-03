@@ -4,6 +4,7 @@ import argparse
 import time
 from drunkard_agent import Drunkard
 from accountant_agent import Accountant
+from gambler_agent import Gambler
 from dungeon import DungeonSimulator
 
 def main():
@@ -19,6 +20,8 @@ def main():
 		agent = Drunkard()
 	if FLAGS.agent == 'ACCOUNTANT':
 		agent = Accountant()
+	if FLAGS.agent == 'GAMBLER':
+		agent = Gambler()
 
 	dungeon = DungeonSimulator()
 	dungeon.reset()
@@ -41,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+	
