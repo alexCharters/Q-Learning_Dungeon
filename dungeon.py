@@ -15,7 +15,7 @@ class DungeonSimulator:
 		if action == BACKWARD:
 			reward = self.small
 			self.state = 0;
-		elif action = forward:
+		elif action == FORWARD:
 			if self.state < self.length-1:
 				self.state++;
 				reward = 0;
