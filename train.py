@@ -33,12 +33,14 @@ def main():
 		action = agent.get_next_action(old_state);
 		new_state, reward = dungeon.take_action(action)
 		agent.update(old_state, new_state, action, reward)
+		if FLAGS.agent == "GAMBLER":
+			dungeon.draw(agent.exploration_rate)
+		else:
+			dungeon.draw()
 
 		total_reward += reward
-		if step % 250 == 0:
-			print(json.dumps({'step':step, 'total_reward': total_reward}))
 
-		time.sleep(.0001)
+		print(json.dumps({'step':step, 'total_reward': total_reward}))
 
 	print("Final Q-table", agent.q_table)
 
